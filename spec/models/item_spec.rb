@@ -30,27 +30,27 @@ RSpec.describe Item, type: :model do
       it 'カテゴリが未選択だと登録できない' do
         @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
-      end      
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
+      end
       it '商品の状態が未選択だと登録できない' do
         @item.state_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("State must be other than 1")
+        expect(@item.errors.full_messages).to include('State must be other than 1')
       end
       it '配送料の負担の情報が未選択だと登録できない' do
         @item.delivery_charge_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery charge must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery charge must be other than 1')
       end
       it '発送元の地域の情報が未選択だと登録できない' do
         @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it '発送までの日数の情報が未選択だと登録できない' do
         @item.delivery_time_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery time must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery time must be other than 1')
       end
       it '価格の情報が空では登録できない' do
         @item.price = ''
@@ -60,22 +60,22 @@ RSpec.describe Item, type: :model do
       it '価格が¥299以下だと登録できない' do
         @item.price = '299'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it '価格が¥10000000以上だと登録できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
       it '価格は全角数字だと登録できない' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
-        it 'ユーザーが紐付いていない場合登録できない。' do
-          @item.user = nil
-          @item.valid?
-          expect(@item.errors.full_messages).to include("User must exist")
+      it 'ユーザーが紐付いていない場合登録できない。' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
