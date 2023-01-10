@@ -1,4 +1,4 @@
-<%= render partial: "header" %>
+<%= render "shared/header" %>
 <div class='main'>
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
@@ -129,7 +129,7 @@
     <ul class='item-lists'>
       <% @items.each do |item| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to item_path(item.id) do %>
         <div class='item-img-content'>
           <%= image_tag item.image, class: "item-img" %>
 
@@ -183,4 +183,4 @@
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
-<%= render partial: "footer" %>
+<%= render "shared/footer" %>
