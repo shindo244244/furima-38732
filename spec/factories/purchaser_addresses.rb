@@ -6,7 +6,6 @@ FactoryBot.define do
     address { '1-1-1' }
     building { 'テストビル' }
     phone_number { '09012345678' }
-    item_id { '1' }
-    user_id { '1' }
+    token { 'process.env.PAYJP_PUBLIC_KEY'}
   end
 end
