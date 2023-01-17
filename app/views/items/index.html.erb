@@ -135,7 +135,9 @@
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <div class='sold-out'>
+          <% if item.purchase_record.present? %>
             <span>Sold Out!!</span>
+          <% end %>
           </div>
           <%# //商品が売れていればsold outを表示しましょう %>
 
