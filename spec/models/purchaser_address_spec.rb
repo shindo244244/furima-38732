@@ -47,7 +47,7 @@ RSpec.describe PurchaserAddress, type: :model do
       it '電話番号が空だと保存できないこと' do
         @purchaser_address.phone_number = ''
         @purchaser_address.valid?
-        expect(@purchaser_address.errors.full_messages).to include('Phone number is invalid')
+        expect(@purchaser_address.errors.full_messages).to include("Phone number can't be blank")
       end
       it '電話番号は、9桁以下だと保存できないこと' do
         @purchaser_address.phone_number = '123456789'
